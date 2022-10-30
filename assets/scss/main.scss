@@ -1,0 +1,265 @@
+//VARIABLES
+$blue: hsl(201, 79%, 46%);
+$gold: hsl(42, 87%, 55%);
+$gray: hsl(214, 32%, 91%);
+$darkgray: hsl(0, 0%, 40%);
+$darkblue: hsl(223, 72%, 55%);
+
+
+//FONTS AND TEXT
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+//BODY
+body {
+  background-color: $gray;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto 1fr;
+
+}
+
+nav {
+  background-color: $blue;
+  color: white;
+  grid-row: span 2;
+  display: grid;
+  align-content: start;
+  padding: 1.5rem;
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: .5rem;
+  }
+
+  i {
+    margin-right: 1rem;
+  }
+
+  a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+header {
+  background-color: white;
+  padding: 1rem 3rem;
+  @extend .shadow;
+}
+
+.header-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+.search-bar {
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+
+  input {
+    background-color: $gray;
+    border: none;
+    border-radius: 100px;
+    padding: .25rem 1rem;
+  }
+}
+
+.user-profile {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: end;
+  gap: 1.5rem;
+
+  p {
+    font-weight: 600;
+  }
+}
+
+.header-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: end;
+  gap: 1.5rem;
+}
+
+/* AVATARS */
+.avatar-sm {
+  background-color: $gray;
+  height: 2.25rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+
+.avatar-lg {
+  background-color: $gray;
+  height: 3.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+
+/* BTN */
+.btn {
+  font-size: .9rem;
+  font-weight: 500;
+  background-color: $blue;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  min-width: 85px;
+  padding: .4rem;
+  cursor: pointer;
+  transition: background-color .3s ease;
+
+  &:hover {
+    background-color: $darkblue;
+  }
+
+  &:active {
+    background-color: $darkgray;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto 25%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* MY PROJECTS */
+.your-projects {
+  grid-row: span 2;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-top: .5rem;
+}
+
+.project-card {
+  display: grid;
+  background-color: white;
+  padding: 1.25rem;
+  border-radius: 7px;
+  border-left: solid 7px $gold;
+  overflow: hidden;
+  @extend .shadow;
+
+  p {
+    font-size: .95rem;
+    color: $darkgray;
+  }
+}
+
+.card-links {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1rem;
+  align-items: center;
+  justify-content: end;
+
+  a {
+    color: hsl(0, 0%, 20%);
+  }
+}
+
+/* ANNOUNCEMENTS */
+.announcements-display {
+  background-color: white;
+  padding: 1.5rem;
+  margin-top: .5rem;
+  border-radius: 7px;
+  @extend .shadow;
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: .9rem;
+    color: $darkgray;
+  }
+}
+
+.announcement:not(:first-child) {
+  padding-top: 1rem;
+}
+
+.announcement:not(:last-child) {
+  padding-bottom: 1rem;
+  border-bottom: solid 1px $darkgray;
+}
+
+/* TRENDING */
+
+.trending-display {
+  @extend .announcements-display;
+}
+
+.trending-now {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  p {
+    color: $darkgray;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 1.25rem;
+  }
+}
+
+//UTILITY
+.shadow {
+  box-shadow: 6px 6px 10px -5px rgba(0, 0, 0, .1);
+}
